@@ -1,0 +1,33 @@
+import { AddressRelationFilter } from "../inputs/AddressRelationFilter";
+import { AdvertisementListRelationFilter } from "../inputs/AdvertisementListRelationFilter";
+import { BoolFilter } from "../inputs/BoolFilter";
+import { DateTimeFilter } from "../inputs/DateTimeFilter";
+import { EnumUserStatusFilter } from "../inputs/EnumUserStatusFilter";
+import { OrganizationRelationFilter } from "../inputs/OrganizationRelationFilter";
+import { PropertyListRelationFilter } from "../inputs/PropertyListRelationFilter";
+import { Property_RequestListRelationFilter } from "../inputs/Property_RequestListRelationFilter";
+import { SaveListRelationFilter } from "../inputs/SaveListRelationFilter";
+import { StringFilter } from "../inputs/StringFilter";
+import { StringNullableFilter } from "../inputs/StringNullableFilter";
+export declare class UserWhereInput {
+    AND?: UserWhereInput[] | undefined;
+    OR?: UserWhereInput[] | undefined;
+    NOT?: UserWhereInput[] | undefined;
+    id?: StringFilter | undefined;
+    firstName?: StringFilter | undefined;
+    lastName?: StringFilter | undefined;
+    middleName?: StringNullableFilter | undefined;
+    status?: EnumUserStatusFilter | undefined;
+    address?: AddressRelationFilter | undefined;
+    property?: PropertyListRelationFilter | undefined;
+    saves?: SaveListRelationFilter | undefined;
+    advertisement?: AdvertisementListRelationFilter | undefined;
+    request?: Property_RequestListRelationFilter | undefined;
+    isVerified?: BoolFilter | undefined;
+    isRegistrated?: BoolFilter | undefined;
+    isDeleted?: BoolFilter | undefined;
+    createdAt?: DateTimeFilter | undefined;
+    updatedAt?: DateTimeFilter | undefined;
+    organization?: OrganizationRelationFilter | undefined;
+    organizationId?: StringNullableFilter | undefined;
+}

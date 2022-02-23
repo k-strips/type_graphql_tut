@@ -1,0 +1,16 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.Duration = void 0;
+const tslib_1 = require("tslib");
+const TypeGraphQL = (0, tslib_1.__importStar)(require("type-graphql"));
+var Duration;
+(function (Duration) {
+    Duration["DAILY"] = "DAILY";
+    Duration["WEEKLY"] = "WEEKLY";
+    Duration["MONTHLY"] = "MONTHLY";
+    Duration["YEARLY"] = "YEARLY";
+})(Duration = exports.Duration || (exports.Duration = {}));
+TypeGraphQL.registerEnumType(Duration, {
+    name: "Duration",
+    description: undefined,
+});

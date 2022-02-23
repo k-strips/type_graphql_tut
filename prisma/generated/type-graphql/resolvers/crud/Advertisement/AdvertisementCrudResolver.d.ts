@@ -1,0 +1,31 @@
+import { GraphQLResolveInfo } from "graphql";
+import { AggregateAdvertisementArgs } from "./args/AggregateAdvertisementArgs";
+import { CreateAdvertisementArgs } from "./args/CreateAdvertisementArgs";
+import { CreateManyAdvertisementArgs } from "./args/CreateManyAdvertisementArgs";
+import { DeleteAdvertisementArgs } from "./args/DeleteAdvertisementArgs";
+import { DeleteManyAdvertisementArgs } from "./args/DeleteManyAdvertisementArgs";
+import { FindFirstAdvertisementArgs } from "./args/FindFirstAdvertisementArgs";
+import { FindManyAdvertisementArgs } from "./args/FindManyAdvertisementArgs";
+import { FindUniqueAdvertisementArgs } from "./args/FindUniqueAdvertisementArgs";
+import { GroupByAdvertisementArgs } from "./args/GroupByAdvertisementArgs";
+import { UpdateAdvertisementArgs } from "./args/UpdateAdvertisementArgs";
+import { UpdateManyAdvertisementArgs } from "./args/UpdateManyAdvertisementArgs";
+import { UpsertAdvertisementArgs } from "./args/UpsertAdvertisementArgs";
+import { Advertisement } from "../../../models/Advertisement";
+import { AdvertisementGroupBy } from "../../outputs/AdvertisementGroupBy";
+import { AffectedRowsOutput } from "../../outputs/AffectedRowsOutput";
+import { AggregateAdvertisement } from "../../outputs/AggregateAdvertisement";
+export declare class AdvertisementCrudResolver {
+    advertisement(ctx: any, info: GraphQLResolveInfo, args: FindUniqueAdvertisementArgs): Promise<Advertisement | null>;
+    findFirstAdvertisement(ctx: any, info: GraphQLResolveInfo, args: FindFirstAdvertisementArgs): Promise<Advertisement | null>;
+    advertisements(ctx: any, info: GraphQLResolveInfo, args: FindManyAdvertisementArgs): Promise<Advertisement[]>;
+    createAdvertisement(ctx: any, info: GraphQLResolveInfo, args: CreateAdvertisementArgs): Promise<Advertisement>;
+    createManyAdvertisement(ctx: any, info: GraphQLResolveInfo, args: CreateManyAdvertisementArgs): Promise<AffectedRowsOutput>;
+    deleteAdvertisement(ctx: any, info: GraphQLResolveInfo, args: DeleteAdvertisementArgs): Promise<Advertisement | null>;
+    updateAdvertisement(ctx: any, info: GraphQLResolveInfo, args: UpdateAdvertisementArgs): Promise<Advertisement | null>;
+    deleteManyAdvertisement(ctx: any, info: GraphQLResolveInfo, args: DeleteManyAdvertisementArgs): Promise<AffectedRowsOutput>;
+    updateManyAdvertisement(ctx: any, info: GraphQLResolveInfo, args: UpdateManyAdvertisementArgs): Promise<AffectedRowsOutput>;
+    upsertAdvertisement(ctx: any, info: GraphQLResolveInfo, args: UpsertAdvertisementArgs): Promise<Advertisement>;
+    aggregateAdvertisement(ctx: any, info: GraphQLResolveInfo, args: AggregateAdvertisementArgs): Promise<AggregateAdvertisement>;
+    groupByAdvertisement(ctx: any, info: GraphQLResolveInfo, args: GroupByAdvertisementArgs): Promise<AdvertisementGroupBy[]>;
+}

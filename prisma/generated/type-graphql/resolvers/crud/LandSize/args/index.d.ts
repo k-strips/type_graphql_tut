@@ -1,0 +1,12 @@
+export { AggregateLandSizeArgs } from "./AggregateLandSizeArgs";
+export { CreateLandSizeArgs } from "./CreateLandSizeArgs";
+export { CreateManyLandSizeArgs } from "./CreateManyLandSizeArgs";
+export { DeleteLandSizeArgs } from "./DeleteLandSizeArgs";
+export { DeleteManyLandSizeArgs } from "./DeleteManyLandSizeArgs";
+export { FindFirstLandSizeArgs } from "./FindFirstLandSizeArgs";
+export { FindManyLandSizeArgs } from "./FindManyLandSizeArgs";
+export { FindUniqueLandSizeArgs } from "./FindUniqueLandSizeArgs";
+export { GroupByLandSizeArgs } from "./GroupByLandSizeArgs";
+export { UpdateLandSizeArgs } from "./UpdateLandSizeArgs";
+export { UpdateManyLandSizeArgs } from "./UpdateManyLandSizeArgs";
+export { UpsertLandSizeArgs } from "./UpsertLandSizeArgs";

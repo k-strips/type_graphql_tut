@@ -1,0 +1,9 @@
+export { AddressRelationsResolver } from "./Address/AddressRelationsResolver";
+export { AdvertisementRelationsResolver } from "./Advertisement/AdvertisementRelationsResolver";
+export { LandSizeRelationsResolver } from "./LandSize/LandSizeRelationsResolver";
+export { OrganizationRelationsResolver } from "./Organization/OrganizationRelationsResolver";
+export { PriceRelationsResolver } from "./Price/PriceRelationsResolver";
+export { PropertyRelationsResolver } from "./Property/PropertyRelationsResolver";
+export { Property_RequestRelationsResolver } from "./Property_Request/Property_RequestRelationsResolver";
+export { SaveRelationsResolver } from "./Save/SaveRelationsResolver";
+export { UserRelationsResolver } from "./User/UserRelationsResolver";

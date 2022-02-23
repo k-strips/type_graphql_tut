@@ -1,0 +1,31 @@
+import { GraphQLResolveInfo } from "graphql";
+import { AggregatePropertyArgs } from "./args/AggregatePropertyArgs";
+import { CreateManyPropertyArgs } from "./args/CreateManyPropertyArgs";
+import { CreatePropertyArgs } from "./args/CreatePropertyArgs";
+import { DeleteManyPropertyArgs } from "./args/DeleteManyPropertyArgs";
+import { DeletePropertyArgs } from "./args/DeletePropertyArgs";
+import { FindFirstPropertyArgs } from "./args/FindFirstPropertyArgs";
+import { FindManyPropertyArgs } from "./args/FindManyPropertyArgs";
+import { FindUniquePropertyArgs } from "./args/FindUniquePropertyArgs";
+import { GroupByPropertyArgs } from "./args/GroupByPropertyArgs";
+import { UpdateManyPropertyArgs } from "./args/UpdateManyPropertyArgs";
+import { UpdatePropertyArgs } from "./args/UpdatePropertyArgs";
+import { UpsertPropertyArgs } from "./args/UpsertPropertyArgs";
+import { Property } from "../../../models/Property";
+import { AffectedRowsOutput } from "../../outputs/AffectedRowsOutput";
+import { AggregateProperty } from "../../outputs/AggregateProperty";
+import { PropertyGroupBy } from "../../outputs/PropertyGroupBy";
+export declare class PropertyCrudResolver {
+    property(ctx: any, info: GraphQLResolveInfo, args: FindUniquePropertyArgs): Promise<Property | null>;
+    findFirstProperty(ctx: any, info: GraphQLResolveInfo, args: FindFirstPropertyArgs): Promise<Property | null>;
+    properties(ctx: any, info: GraphQLResolveInfo, args: FindManyPropertyArgs): Promise<Property[]>;
+    createProperty(ctx: any, info: GraphQLResolveInfo, args: CreatePropertyArgs): Promise<Property>;
+    createManyProperty(ctx: any, info: GraphQLResolveInfo, args: CreateManyPropertyArgs): Promise<AffectedRowsOutput>;
+    deleteProperty(ctx: any, info: GraphQLResolveInfo, args: DeletePropertyArgs): Promise<Property | null>;
+    updateProperty(ctx: any, info: GraphQLResolveInfo, args: UpdatePropertyArgs): Promise<Property | null>;
+    deleteManyProperty(ctx: any, info: GraphQLResolveInfo, args: DeleteManyPropertyArgs): Promise<AffectedRowsOutput>;
+    updateManyProperty(ctx: any, info: GraphQLResolveInfo, args: UpdateManyPropertyArgs): Promise<AffectedRowsOutput>;
+    upsertProperty(ctx: any, info: GraphQLResolveInfo, args: UpsertPropertyArgs): Promise<Property>;
+    aggregateProperty(ctx: any, info: GraphQLResolveInfo, args: AggregatePropertyArgs): Promise<AggregateProperty>;
+    groupByProperty(ctx: any, info: GraphQLResolveInfo, args: GroupByPropertyArgs): Promise<PropertyGroupBy[]>;
+}

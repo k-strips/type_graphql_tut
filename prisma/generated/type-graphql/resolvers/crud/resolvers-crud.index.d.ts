@@ -1,0 +1,11 @@
+export { AddressCrudResolver } from "./Address/AddressCrudResolver";
+export { AdvertisementCrudResolver } from "./Advertisement/AdvertisementCrudResolver";
+export { LandSizeCrudResolver } from "./LandSize/LandSizeCrudResolver";
+export { LocationCrudResolver } from "./Location/LocationCrudResolver";
+export { OrganizationCrudResolver } from "./Organization/OrganizationCrudResolver";
+export { PriceCrudResolver } from "./Price/PriceCrudResolver";
+export { PropertyCrudResolver } from "./Property/PropertyCrudResolver";
+export { Property_RequestCrudResolver } from "./Property_Request/Property_RequestCrudResolver";
+export { SaveCrudResolver } from "./Save/SaveCrudResolver";
+export { SearchCrudResolver } from "./Search/SearchCrudResolver";
+export { UserCrudResolver } from "./User/UserCrudResolver";

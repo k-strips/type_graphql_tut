@@ -1,0 +1,51 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.FindManySearchArgs = void 0;
+const tslib_1 = require("tslib");
+const TypeGraphQL = (0, tslib_1.__importStar)(require("type-graphql"));
+const SearchOrderByWithRelationAndSearchRelevanceInput_1 = require("../../../inputs/SearchOrderByWithRelationAndSearchRelevanceInput");
+const SearchWhereInput_1 = require("../../../inputs/SearchWhereInput");
+const SearchWhereUniqueInput_1 = require("../../../inputs/SearchWhereUniqueInput");
+const SearchScalarFieldEnum_1 = require("../../../../enums/SearchScalarFieldEnum");
+let FindManySearchArgs = class FindManySearchArgs {
+};
+(0, tslib_1.__decorate)([
+    TypeGraphQL.Field(_type => SearchWhereInput_1.SearchWhereInput, {
+        nullable: true
+    }),
+    (0, tslib_1.__metadata)("design:type", SearchWhereInput_1.SearchWhereInput)
+], FindManySearchArgs.prototype, "where", void 0);
+(0, tslib_1.__decorate)([
+    TypeGraphQL.Field(_type => [SearchOrderByWithRelationAndSearchRelevanceInput_1.SearchOrderByWithRelationAndSearchRelevanceInput], {
+        nullable: true
+    }),
+    (0, tslib_1.__metadata)("design:type", Array)
+], FindManySearchArgs.prototype, "orderBy", void 0);
+(0, tslib_1.__decorate)([
+    TypeGraphQL.Field(_type => SearchWhereUniqueInput_1.SearchWhereUniqueInput, {
+        nullable: true
+    }),
+    (0, tslib_1.__metadata)("design:type", SearchWhereUniqueInput_1.SearchWhereUniqueInput)
+], FindManySearchArgs.prototype, "cursor", void 0);
+(0, tslib_1.__decorate)([
+    TypeGraphQL.Field(_type => TypeGraphQL.Int, {
+        nullable: true
+    }),
+    (0, tslib_1.__metadata)("design:type", Number)
+], FindManySearchArgs.prototype, "take", void 0);
+(0, tslib_1.__decorate)([
+    TypeGraphQL.Field(_type => TypeGraphQL.Int, {
+        nullable: true
+    }),
+    (0, tslib_1.__metadata)("design:type", Number)
+], FindManySearchArgs.prototype, "skip", void 0);
+(0, tslib_1.__decorate)([
+    TypeGraphQL.Field(_type => [SearchScalarFieldEnum_1.SearchScalarFieldEnum], {
+        nullable: true
+    }),
+    (0, tslib_1.__metadata)("design:type", Array)
+], FindManySearchArgs.prototype, "distinct", void 0);
+FindManySearchArgs = (0, tslib_1.__decorate)([
+    TypeGraphQL.ArgsType()
+], FindManySearchArgs);
+exports.FindManySearchArgs = FindManySearchArgs;

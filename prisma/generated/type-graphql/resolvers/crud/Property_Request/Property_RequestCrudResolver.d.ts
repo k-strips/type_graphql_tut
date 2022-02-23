@@ -1,0 +1,31 @@
+import { GraphQLResolveInfo } from "graphql";
+import { AggregateProperty_RequestArgs } from "./args/AggregateProperty_RequestArgs";
+import { CreateManyProperty_RequestArgs } from "./args/CreateManyProperty_RequestArgs";
+import { CreateProperty_RequestArgs } from "./args/CreateProperty_RequestArgs";
+import { DeleteManyProperty_RequestArgs } from "./args/DeleteManyProperty_RequestArgs";
+import { DeleteProperty_RequestArgs } from "./args/DeleteProperty_RequestArgs";
+import { FindFirstProperty_RequestArgs } from "./args/FindFirstProperty_RequestArgs";
+import { FindManyProperty_RequestArgs } from "./args/FindManyProperty_RequestArgs";
+import { FindUniqueProperty_RequestArgs } from "./args/FindUniqueProperty_RequestArgs";
+import { GroupByProperty_RequestArgs } from "./args/GroupByProperty_RequestArgs";
+import { UpdateManyProperty_RequestArgs } from "./args/UpdateManyProperty_RequestArgs";
+import { UpdateProperty_RequestArgs } from "./args/UpdateProperty_RequestArgs";
+import { UpsertProperty_RequestArgs } from "./args/UpsertProperty_RequestArgs";
+import { Property_Request } from "../../../models/Property_Request";
+import { AffectedRowsOutput } from "../../outputs/AffectedRowsOutput";
+import { AggregateProperty_Request } from "../../outputs/AggregateProperty_Request";
+import { Property_RequestGroupBy } from "../../outputs/Property_RequestGroupBy";
+export declare class Property_RequestCrudResolver {
+    property_Request(ctx: any, info: GraphQLResolveInfo, args: FindUniqueProperty_RequestArgs): Promise<Property_Request | null>;
+    findFirstProperty_Request(ctx: any, info: GraphQLResolveInfo, args: FindFirstProperty_RequestArgs): Promise<Property_Request | null>;
+    property_Requests(ctx: any, info: GraphQLResolveInfo, args: FindManyProperty_RequestArgs): Promise<Property_Request[]>;
+    createProperty_Request(ctx: any, info: GraphQLResolveInfo, args: CreateProperty_RequestArgs): Promise<Property_Request>;
+    createManyProperty_Request(ctx: any, info: GraphQLResolveInfo, args: CreateManyProperty_RequestArgs): Promise<AffectedRowsOutput>;
+    deleteProperty_Request(ctx: any, info: GraphQLResolveInfo, args: DeleteProperty_RequestArgs): Promise<Property_Request | null>;
+    updateProperty_Request(ctx: any, info: GraphQLResolveInfo, args: UpdateProperty_RequestArgs): Promise<Property_Request | null>;
+    deleteManyProperty_Request(ctx: any, info: GraphQLResolveInfo, args: DeleteManyProperty_RequestArgs): Promise<AffectedRowsOutput>;
+    updateManyProperty_Request(ctx: any, info: GraphQLResolveInfo, args: UpdateManyProperty_RequestArgs): Promise<AffectedRowsOutput>;
+    upsertProperty_Request(ctx: any, info: GraphQLResolveInfo, args: UpsertProperty_RequestArgs): Promise<Property_Request>;
+    aggregateProperty_Request(ctx: any, info: GraphQLResolveInfo, args: AggregateProperty_RequestArgs): Promise<AggregateProperty_Request>;
+    groupByProperty_Request(ctx: any, info: GraphQLResolveInfo, args: GroupByProperty_RequestArgs): Promise<Property_RequestGroupBy[]>;
+}

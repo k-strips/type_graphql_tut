@@ -1,0 +1,12 @@
+export { AggregateAdvertisementArgs } from "./AggregateAdvertisementArgs";
+export { CreateAdvertisementArgs } from "./CreateAdvertisementArgs";
+export { CreateManyAdvertisementArgs } from "./CreateManyAdvertisementArgs";
+export { DeleteAdvertisementArgs } from "./DeleteAdvertisementArgs";
+export { DeleteManyAdvertisementArgs } from "./DeleteManyAdvertisementArgs";
+export { FindFirstAdvertisementArgs } from "./FindFirstAdvertisementArgs";
+export { FindManyAdvertisementArgs } from "./FindManyAdvertisementArgs";
+export { FindUniqueAdvertisementArgs } from "./FindUniqueAdvertisementArgs";
+export { GroupByAdvertisementArgs } from "./GroupByAdvertisementArgs";
+export { UpdateAdvertisementArgs } from "./UpdateAdvertisementArgs";
+export { UpdateManyAdvertisementArgs } from "./UpdateManyAdvertisementArgs";
+export { UpsertAdvertisementArgs } from "./UpsertAdvertisementArgs";

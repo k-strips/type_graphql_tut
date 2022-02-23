@@ -1,0 +1,35 @@
+import { DateTimeFilter } from "../inputs/DateTimeFilter";
+import { EnumAcquisitionTypeFilter } from "../inputs/EnumAcquisitionTypeFilter";
+import { EnumPropertyStateNullableFilter } from "../inputs/EnumPropertyStateNullableFilter";
+import { EnumPropertyTypeFilter } from "../inputs/EnumPropertyTypeFilter";
+import { IntNullableFilter } from "../inputs/IntNullableFilter";
+import { LandSizeRelationFilter } from "../inputs/LandSizeRelationFilter";
+import { PriceListRelationFilter } from "../inputs/PriceListRelationFilter";
+import { StringFilter } from "../inputs/StringFilter";
+import { StringNullableFilter } from "../inputs/StringNullableFilter";
+import { StringNullableListFilter } from "../inputs/StringNullableListFilter";
+import { UserRelationFilter } from "../inputs/UserRelationFilter";
+export declare class Property_RequestWhereInput {
+    AND?: Property_RequestWhereInput[] | undefined;
+    OR?: Property_RequestWhereInput[] | undefined;
+    NOT?: Property_RequestWhereInput[] | undefined;
+    id?: StringFilter | undefined;
+    type?: EnumPropertyTypeFilter | undefined;
+    acquisition?: EnumAcquisitionTypeFilter | undefined;
+    state?: EnumPropertyStateNullableFilter | undefined;
+    priceRange?: PriceListRelationFilter | undefined;
+    amenities?: StringNullableListFilter | undefined;
+    size?: LandSizeRelationFilter | undefined;
+    parkingCapacity?: IntNullableFilter | undefined;
+    seating?: IntNullableFilter | undefined;
+    bedrooms?: IntNullableFilter | undefined;
+    bathrooms?: IntNullableFilter | undefined;
+    additionalInfo?: StringNullableFilter | undefined;
+    region?: StringNullableFilter | undefined;
+    city?: StringNullableFilter | undefined;
+    town?: StringNullableFilter | undefined;
+    createdAt?: DateTimeFilter | undefined;
+    updatedAt?: DateTimeFilter | undefined;
+    user?: UserRelationFilter | undefined;
+    userId?: StringNullableFilter | undefined;
+}

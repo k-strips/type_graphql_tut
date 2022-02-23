@@ -1,0 +1,284 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["fullTextSearch", "filterJson"]
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator typegraphql {
+  provider           = "typegraphql-prisma"
+  output             = "../prisma/generated/type-graphql"
+  emitTranspiledCode = true
+}
+
+model Organization {
+  id            String          @id @default(uuid())
+  title         String          @unique @db.VarChar(128)
+  address       Address?
+  members       User[]
+  properties    Property[]
+  advertisement Advertisement[]
+  isVerified    Boolean         @default(false)
+  isRegistrated Boolean         @default(false)
+  isDeleted     Boolean         @default(false)
+  createdAt     DateTime        @default(now()) @db.Timestamptz
+  updatedAt     DateTime        @default(now()) @db.Timestamptz
+}
+
+model User {
+  id             String             @id @default(uuid())
+  firstName      String             @db.VarChar(32)
+  lastName       String             @db.VarChar(32)
+  middleName     String?            @db.VarChar(32)
+  status         UserStatus         @default(SEEKER)
+  address        Address?
+  property       Property[]
+  saves          Save[]
+  advertisement  Advertisement[]
+  request        Property_Request[]
+  isVerified     Boolean            @default(false)
+  isRegistrated  Boolean            @default(false)
+  isDeleted      Boolean            @default(false)
+  createdAt      DateTime           @default(now()) @db.Timestamptz
+  updatedAt      DateTime           @default(now()) @db.Timestamptz
+  organization   Organization?      @relation(fields: [organizationId], references: [id])
+  organizationId String?
+}
+
+model Save {
+  id         String    @id @default(uuid())
+  createdAt  DateTime  @default(now()) @db.Timestamptz
+  User       User?     @relation(fields: [userId], references: [id])
+  userId     String?
+  Property   Property? @relation(fields: [propertyId], references: [id])
+  propertyId String?
+}
+
+model Address {
+  id             String        @id @default(uuid())
+  email          String        @unique @db.VarChar(128)
+  mobile         String?       @db.VarChar(16)
+  work           String?       @db.VarChar(16)
+  office         String?       @db.VarChar(16)
+  createdAt      DateTime      @default(now()) @db.Timestamptz
+  updatedAt      DateTime      @default(now()) @db.Timestamptz
+  Organization   Organization? @relation(fields: [organizationId], references: [id])
+  organizationId String?       @unique
+  User           User?         @relation(fields: [userId], references: [id])
+  userId         String?       @unique
+}
+
+model Property {
+  id              String          @id @default(uuid())
+  type            PropertyType
+  acquisition     AcquisitionType
+  state           PropertyState?
+  size            LandSize?
+  price           Price?
+  images          String[]
+  amenities       String[]
+  parkingCapacity Int?
+  seating         Int?
+  bedrooms        Int?
+  bathrooms       Int?
+  description     String?         @db.Text
+  views           Int             @default(0)
+  likes           Save[]
+  source          String          @db.VarChar(32)
+  region          String          @db.VarChar(16)
+  city            String          @db.VarChar(32)
+  town            String          @db.VarChar(32)
+  streetName      String?         @db.VarChar(32)
+  digitalAddress  String?         @db.VarChar(16)
+  locationDesc    String?         @db.Text
+  lat             Float?
+  lon             Float?
+  isDeleted       Boolean         @default(false)
+  createdAt       DateTime        @default(now()) @db.Timestamptz
+  updatedAt       DateTime        @default(now()) @db.Timestamptz
+  owner           User?           @relation(fields: [userId], references: [id])
+  organization    Organization?   @relation(fields: [organizationId], references: [id])
+  organizationId  String?
+  userId          String?
+  advertisement   Advertisement[]
+}
+
+model Property_Request {
+  id              String          @id @default(uuid())
+  type            PropertyType
+  acquisition     AcquisitionType
+  state           PropertyState?
+  priceRange      Price[]
+  amenities       String[]
+  size            LandSize?
+  parkingCapacity Int?
+  seating         Int?
+  bedrooms        Int?
+  bathrooms       Int?
+  additionalInfo  String?         @db.VarChar(512)
+  region          String?         @db.VarChar(16)
+  city            String?         @db.VarChar(32)
+  town            String?         @db.VarChar(32)
+  createdAt       DateTime        @default(now()) @db.Timestamptz
+  updatedAt       DateTime        @default(now()) @db.Timestamptz
+  user            User?           @relation(fields: [userId], references: [id])
+  userId          String?
+}
+
+model Location {
+  id                      String  @id @default(uuid())
+  region                  String  @db.VarChar(16)
+  city                    String  @db.VarChar(16)
+  locationInfo            String? @db.VarChar(512)
+  electricitySupplyRating Int?
+  waterSupplyRating       Int?
+  noiseLevelSupplyRating  Int?
+  crimeSupplpyRating      Int?
+  recreationalRating      Int?
+  trafficRating           Int?
+  lat                     Float?
+  lon                     Float?
+
+  @@unique([region, city])
+}
+
+model Advertisement {
+  id             String        @id @default(uuid())
+  price          Price?
+  isExpired      Boolean       @default(false)
+  isPaused       Boolean       @default(false)
+  createdAt      DateTime      @default(now()) @db.Timestamptz
+  updatedAt      DateTime      @default(now()) @db.Timestamptz
+  user           User?         @relation(fields: [userId], references: [id])
+  userId         String?
+  organization   Organization? @relation(fields: [organizationId], references: [id])
+  organizationId String?
+  property       Property?     @relation(fields: [propertyId], references: [id])
+  propertyId     String?
+}
+
+model Price {
+  id                 String            @id @default(uuid())
+  figure             Float             @db.DoublePrecision
+  currency           Currency
+  duration           Duration?
+  Property           Property?         @relation(fields: [propertyId], references: [id])
+  propertyId         String?           @unique
+  advertisement      Advertisement?    @relation(fields: [advertisementId], references: [id])
+  advertisementId    String?           @unique
+  Property_Request   Property_Request? @relation(fields: [property_RequestId], references: [id])
+  property_RequestId String?
+}
+
+model LandSize {
+  id                 String            @id @default(uuid())
+  measurement        Float
+  unit               LandSizeUnit
+  Property           Property?         @relation(fields: [propertyId], references: [id])
+  propertyId         String?           @unique
+  Property_Request   Property_Request? @relation(fields: [property_RequestId], references: [id])
+  property_RequestId String?           @unique
+}
+
+model Search {
+  id              String           @id @default(uuid())
+  userId          String
+  category        PropertyCategory
+  type            PropertyType?
+  acquisition     AcquisitionType?
+  seating         Int?
+  state           PropertyState?
+  bedrooms        Int?
+  bathrooms       Int?
+  parkingCapacity Int?
+  location        String?
+  createdAt       DateTime         @default(now()) @db.Timestamptz
+}
+
+enum Currency {
+  GHS
+  USD
+}
+
+enum OwnerType {
+  INDIVIDUAL
+  AGENT
+  DEVELOPER
+}
+
+enum PropertyCategory {
+  AGRICULTURAL_FARMLAND
+  COMMERCIAL
+  PARTIES_EVENT
+  RESIDENTIAL
+}
+
+enum PropertyState {
+  FURNISHED
+  NOT_FURNISHED
+  PARTLY_FURNISHED
+}
+
+enum PropertyType {
+  FISH_FARM
+  CROP_FARM
+  LIVESTOCK_FARM
+  RETAIL
+  OFFICE
+  BANKING
+  LEISURE
+  HEALTHCARE
+  HOTEL
+  SHOP
+  SHIPPING_CONTAINER
+  INDOOR
+  BANQUET_HALL
+  BALLROOM
+  COMMUNITY_CENTER
+  CONFERENCE_ROOMS
+  hOTELS
+  NIGHT_CLUBS
+  GARDENS
+  CHURCH
+  STADIA
+  THEATERS
+  HOUSE
+  NEW_DEVELOPMENT
+  BUNGALOW
+  APARTMENT
+  STUDION
+  PENTHOUSE
+  BUILDING_PLOT
+}
+
+enum UserStatus {
+  SEEKER
+  PROPERTYOWNER
+  INVESTORS
+}
+
+enum AcquisitionType {
+  BUY
+  RENT
+  SHORT_STAY
+  LONG_STAY
+}
+
+enum Duration {
+  DAILY
+  WEEKLY
+  MONTHLY
+  YEARLY
+}
+
+enum LandSizeUnit {
+  ACRE
+  PLOT
+  HECTARE
+  SQUAREMETER
+}

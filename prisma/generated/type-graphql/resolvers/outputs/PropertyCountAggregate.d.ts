@@ -1,0 +1,29 @@
+export declare class PropertyCountAggregate {
+    id: number;
+    type: number;
+    acquisition: number;
+    state: number;
+    images: number;
+    amenities: number;
+    parkingCapacity: number;
+    seating: number;
+    bedrooms: number;
+    bathrooms: number;
+    description: number;
+    views: number;
+    source: number;
+    region: number;
+    city: number;
+    town: number;
+    streetName: number;
+    digitalAddress: number;
+    locationDesc: number;
+    lat: number;
+    lon: number;
+    isDeleted: number;
+    createdAt: number;
+    updatedAt: number;
+    organizationId: number;
+    userId: number;
+    _all: number;
+}

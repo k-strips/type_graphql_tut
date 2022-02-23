@@ -1,0 +1,12 @@
+export { AggregateProperty_RequestArgs } from "./AggregateProperty_RequestArgs";
+export { CreateManyProperty_RequestArgs } from "./CreateManyProperty_RequestArgs";
+export { CreateProperty_RequestArgs } from "./CreateProperty_RequestArgs";
+export { DeleteManyProperty_RequestArgs } from "./DeleteManyProperty_RequestArgs";
+export { DeleteProperty_RequestArgs } from "./DeleteProperty_RequestArgs";
+export { FindFirstProperty_RequestArgs } from "./FindFirstProperty_RequestArgs";
+export { FindManyProperty_RequestArgs } from "./FindManyProperty_RequestArgs";
+export { FindUniqueProperty_RequestArgs } from "./FindUniqueProperty_RequestArgs";
+export { GroupByProperty_RequestArgs } from "./GroupByProperty_RequestArgs";
+export { UpdateManyProperty_RequestArgs } from "./UpdateManyProperty_RequestArgs";
+export { UpdateProperty_RequestArgs } from "./UpdateProperty_RequestArgs";
+export { UpsertProperty_RequestArgs } from "./UpsertProperty_RequestArgs";

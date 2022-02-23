@@ -1,0 +1,31 @@
+import { GraphQLResolveInfo } from "graphql";
+import { AggregateSearchArgs } from "./args/AggregateSearchArgs";
+import { CreateManySearchArgs } from "./args/CreateManySearchArgs";
+import { CreateSearchArgs } from "./args/CreateSearchArgs";
+import { DeleteManySearchArgs } from "./args/DeleteManySearchArgs";
+import { DeleteSearchArgs } from "./args/DeleteSearchArgs";
+import { FindFirstSearchArgs } from "./args/FindFirstSearchArgs";
+import { FindManySearchArgs } from "./args/FindManySearchArgs";
+import { FindUniqueSearchArgs } from "./args/FindUniqueSearchArgs";
+import { GroupBySearchArgs } from "./args/GroupBySearchArgs";
+import { UpdateManySearchArgs } from "./args/UpdateManySearchArgs";
+import { UpdateSearchArgs } from "./args/UpdateSearchArgs";
+import { UpsertSearchArgs } from "./args/UpsertSearchArgs";
+import { Search } from "../../../models/Search";
+import { AffectedRowsOutput } from "../../outputs/AffectedRowsOutput";
+import { AggregateSearch } from "../../outputs/AggregateSearch";
+import { SearchGroupBy } from "../../outputs/SearchGroupBy";
+export declare class SearchCrudResolver {
+    search(ctx: any, info: GraphQLResolveInfo, args: FindUniqueSearchArgs): Promise<Search | null>;
+    findFirstSearch(ctx: any, info: GraphQLResolveInfo, args: FindFirstSearchArgs): Promise<Search | null>;
+    searches(ctx: any, info: GraphQLResolveInfo, args: FindManySearchArgs): Promise<Search[]>;
+    createSearch(ctx: any, info: GraphQLResolveInfo, args: CreateSearchArgs): Promise<Search>;
+    createManySearch(ctx: any, info: GraphQLResolveInfo, args: CreateManySearchArgs): Promise<AffectedRowsOutput>;
+    deleteSearch(ctx: any, info: GraphQLResolveInfo, args: DeleteSearchArgs): Promise<Search | null>;
+    updateSearch(ctx: any, info: GraphQLResolveInfo, args: UpdateSearchArgs): Promise<Search | null>;
+    deleteManySearch(ctx: any, info: GraphQLResolveInfo, args: DeleteManySearchArgs): Promise<AffectedRowsOutput>;
+    updateManySearch(ctx: any, info: GraphQLResolveInfo, args: UpdateManySearchArgs): Promise<AffectedRowsOutput>;
+    upsertSearch(ctx: any, info: GraphQLResolveInfo, args: UpsertSearchArgs): Promise<Search>;
+    aggregateSearch(ctx: any, info: GraphQLResolveInfo, args: AggregateSearchArgs): Promise<AggregateSearch>;
+    groupBySearch(ctx: any, info: GraphQLResolveInfo, args: GroupBySearchArgs): Promise<SearchGroupBy[]>;
+}

@@ -1,0 +1,12 @@
+export { AggregatePropertyArgs } from "./AggregatePropertyArgs";
+export { CreateManyPropertyArgs } from "./CreateManyPropertyArgs";
+export { CreatePropertyArgs } from "./CreatePropertyArgs";
+export { DeleteManyPropertyArgs } from "./DeleteManyPropertyArgs";
+export { DeletePropertyArgs } from "./DeletePropertyArgs";
+export { FindFirstPropertyArgs } from "./FindFirstPropertyArgs";
+export { FindManyPropertyArgs } from "./FindManyPropertyArgs";
+export { FindUniquePropertyArgs } from "./FindUniquePropertyArgs";
+export { GroupByPropertyArgs } from "./GroupByPropertyArgs";
+export { UpdateManyPropertyArgs } from "./UpdateManyPropertyArgs";
+export { UpdatePropertyArgs } from "./UpdatePropertyArgs";
+export { UpsertPropertyArgs } from "./UpsertPropertyArgs";

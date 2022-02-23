@@ -1,0 +1,38 @@
+import { BoolFieldUpdateOperationsInput } from "../inputs/BoolFieldUpdateOperationsInput";
+import { DateTimeFieldUpdateOperationsInput } from "../inputs/DateTimeFieldUpdateOperationsInput";
+import { EnumAcquisitionTypeFieldUpdateOperationsInput } from "../inputs/EnumAcquisitionTypeFieldUpdateOperationsInput";
+import { EnumPropertyTypeFieldUpdateOperationsInput } from "../inputs/EnumPropertyTypeFieldUpdateOperationsInput";
+import { IntFieldUpdateOperationsInput } from "../inputs/IntFieldUpdateOperationsInput";
+import { NullableEnumPropertyStateFieldUpdateOperationsInput } from "../inputs/NullableEnumPropertyStateFieldUpdateOperationsInput";
+import { NullableFloatFieldUpdateOperationsInput } from "../inputs/NullableFloatFieldUpdateOperationsInput";
+import { NullableIntFieldUpdateOperationsInput } from "../inputs/NullableIntFieldUpdateOperationsInput";
+import { NullableStringFieldUpdateOperationsInput } from "../inputs/NullableStringFieldUpdateOperationsInput";
+import { PropertyUpdateamenitiesInput } from "../inputs/PropertyUpdateamenitiesInput";
+import { PropertyUpdateimagesInput } from "../inputs/PropertyUpdateimagesInput";
+import { StringFieldUpdateOperationsInput } from "../inputs/StringFieldUpdateOperationsInput";
+export declare class PropertyUpdateManyMutationInput {
+    id?: StringFieldUpdateOperationsInput | undefined;
+    type?: EnumPropertyTypeFieldUpdateOperationsInput | undefined;
+    acquisition?: EnumAcquisitionTypeFieldUpdateOperationsInput | undefined;
+    state?: NullableEnumPropertyStateFieldUpdateOperationsInput | undefined;
+    images?: PropertyUpdateimagesInput | undefined;
+    amenities?: PropertyUpdateamenitiesInput | undefined;
+    parkingCapacity?: NullableIntFieldUpdateOperationsInput | undefined;
+    seating?: NullableIntFieldUpdateOperationsInput | undefined;
+    bedrooms?: NullableIntFieldUpdateOperationsInput | undefined;
+    bathrooms?: NullableIntFieldUpdateOperationsInput | undefined;
+    description?: NullableStringFieldUpdateOperationsInput | undefined;
+    views?: IntFieldUpdateOperationsInput | undefined;
+    source?: StringFieldUpdateOperationsInput | undefined;
+    region?: StringFieldUpdateOperationsInput | undefined;
+    city?: StringFieldUpdateOperationsInput | undefined;
+    town?: StringFieldUpdateOperationsInput | undefined;
+    streetName?: NullableStringFieldUpdateOperationsInput | undefined;
+    digitalAddress?: NullableStringFieldUpdateOperationsInput | undefined;
+    locationDesc?: NullableStringFieldUpdateOperationsInput | undefined;
+    lat?: NullableFloatFieldUpdateOperationsInput | undefined;
+    lon?: NullableFloatFieldUpdateOperationsInput | undefined;
+    isDeleted?: BoolFieldUpdateOperationsInput | undefined;
+    createdAt?: DateTimeFieldUpdateOperationsInput | undefined;
+    updatedAt?: DateTimeFieldUpdateOperationsInput | undefined;
+}
